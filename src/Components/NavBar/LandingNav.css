@@ -1,0 +1,20 @@
+.landingNavLogo {
+    height: 100px;
+    width: 300px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    object-fit: cover;
+}
+.landingNav{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.landingNavDrop{
+    margin-right: 40px
+}
+  .LPFooter{     
+      text-decoration: none;
+      margin-bottom: 10px;
+      
+     }
