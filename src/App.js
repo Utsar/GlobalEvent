@@ -1,17 +1,19 @@
-import './App.css';
-import { EventForm } from './Components/LandingPage/EventForm';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { LandingPageVideo } from './Components/LandingPage/LandingPageVideo';
-import { LandingNavBar } from './Components/NavBar/LandingNavBar';
+import { LandingEventForm } from './Components/LandingPage/LandingEventForm';
+import { LandingBackgroundVideo } from './Components/LandingPage/LandingBackgroundVideo';
+import { LandingNavBar } from './Components/LandingPage/LandingNavBar';
 import { LandingFooter } from './Components/LandingPage/LandingFooter';
+import { LandingIntro } from './Components/LandingPage/LandingIntro';
 
 
 export const App = () => {
   return (
     <>
     <LandingNavBar/>
-      <LandingPageVideo/>
-      <EventForm />
+      <LandingBackgroundVideo/>
+      <LandingIntro/>
+      <LandingEventForm />
       <LandingFooter/>
     </>
   );
