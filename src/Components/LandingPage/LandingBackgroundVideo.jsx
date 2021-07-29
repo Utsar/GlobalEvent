@@ -8,7 +8,7 @@ export const LandingBackgroundVideo = () => {
         <>
        
         
-        <video className="LPVideo" controls={false} autoStart={true} autoPlay={true} muted={true} loop={true} src={Video} type="video/mp4" />
+        <video className="LPVideo" controls={false} autoPlay={true} muted={true} loop={true} src={Video} type="video/mp4" />
         
         
         </>
