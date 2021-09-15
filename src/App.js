@@ -4,17 +4,17 @@ import { LandingBackgroundVideo } from "./Components/LandingPage/LandingBackgrou
 import { LandingNavBar } from "./Components/LandingPage/LandingNavBar";
 import { LandingFooter } from "./Components/LandingPage/LandingFooter";
 import { LandingIntro } from "./Components/LandingPage/LandingIntro";
-import { FullEventForm } from "./Components/FullEventForm/FullEventForm";
+// import { FullEventForm } from "./Components/FullEventForm/FullEventForm";
 
 export const App = () => {
   return (
     <>
       <LandingNavBar />
       <LandingBackgroundVideo />
-      {/* <LandingIntro />
+      <LandingIntro />
       <LandingEventForm />
-      <LandingFooter /> */}
-      <FullEventForm />
+      <LandingFooter />
+      {/* <FullEventForm /> */}
     </>
   );
 };
