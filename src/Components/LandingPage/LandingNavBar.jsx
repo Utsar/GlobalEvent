@@ -3,7 +3,7 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./LandingPage.css";
 import logoWhite from "../../Assets/logoWhite.png";
 
-export const LandingNavBar = () => {
+const LandingNavBar = () => {
   return (
     <>
       <Navbar
@@ -44,3 +44,4 @@ export const LandingNavBar = () => {
     </>
   );
 };
+export default LandingNavBar;
