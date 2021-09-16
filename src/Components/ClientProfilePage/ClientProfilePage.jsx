@@ -4,6 +4,7 @@ import { Container, Row, Navbar, Nav, NavDropdown, Col } from "react-bootstrap";
 import { BsList } from "react-icons/bs";
 
 import logoWhite from "../../Assets/logoWhite.png";
+import { Avatar } from "@mui/material";
 
 export const ClientProfilePage = () => {
   return (
@@ -51,14 +52,17 @@ export const ClientProfilePage = () => {
       </Container>
       <Container fluid>
         <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={2}>
             <BsList className="clientProfileSideMenuButton" />
           </Col>
-          <Col className="clientProfileHero" xs={12} md={4}>
-            I'm hero profile page
+          <Col className="clientProfileHero" xs={12} md={8}>
+            <div>
+              <Avatar />
+            </div>
+            <div>something else</div>
           </Col>
-          <Col xs={12} md={4}>
-            I'm newsfeed
+          <Col xs={12} md={2}>
+            news feed
           </Col>
         </Row>
       </Container>
