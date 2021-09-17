@@ -9,6 +9,7 @@ import { Avatar, Button } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
+import { LoremIpsum } from "react-lorem-ipsum";
 
 // star rating values
 // const labels = {
@@ -57,12 +58,16 @@ export const SupplierProfilePage = () => {
                   sx={{ color: "white", mr: "10px", ml: "10px" }}
                 />
                 <MessageOutlined sx={{ color: "white" }} />
-                <Avatar sx={{ color: "white", mr: "10px", ml: "20px" }} />
+                <Avatar
+                  src={supplierHero}
+                  sx={{ color: "white", mr: "10px", ml: "20px" }}
+                />
               </Nav>
             </Navbar.Collapse>
           </Navbar>
         </Row>
       </Container>
+
       <Container fluid className="supplierProfileHeroContainer">
         <div className="SupplierProfileImage">
           <img
@@ -73,13 +78,27 @@ export const SupplierProfilePage = () => {
         </div>
         <Row style={{ padding: 0, margin: 0 }}>
           <Col xs={12} md={2} className="supplierProfileNavbar">
-            {" "}
-            I'm a navbar
+            <div className="supplierProfileAvatar">
+              <Avatar src={supplierHero} style={{ height: 100, width: 100 }} />
+            </div>
+            <div>
+              <li className="supplierProfileNavItems">
+                <ul>Personal details</ul>
+                <ul>Services</ul>
+                <ul>Documents</ul>
+                <ul>Notification Settings</ul>
+                <ul>Gallery</ul>
+              </li>
+            </div>
           </Col>
           <Col xs={12} md={10}>
             <div className="supplierProfileHero1">
               <h2>Kristian Utsar`s company</h2>
-              <Button variant="contained" color="success">
+              <Button
+                variant="contained"
+                color="success"
+                style={{ marginTop: 5, marginRight: 50 }}
+              >
                 Set up
               </Button>
             </div>
@@ -92,6 +111,7 @@ export const SupplierProfilePage = () => {
                 }}
               >
                 <Rating
+                  className="supplierProfileHeroRating"
                   name="hover-feedback"
                   value={value}
                   precision={0.5}
@@ -105,20 +125,18 @@ export const SupplierProfilePage = () => {
                     <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
                   }
                 />
-                {/* {value !== null && (
-                  <Box sx={{ ml: 2 }}>
-                    {labels[hover !== -1 ? hover : value]}
-                  </Box>
-                )} */}
+                <span>total reviews</span>
               </Box>
               <li className="clientProfileInfo">
-                <ul> services done</ul>
-                <ul> acive bookings</ul>
-                <ul> Profile views</ul>
-                <ul> member since</ul>
+                <ul>services done</ul>
+                <ul>acive bookings</ul>
+                <ul>Profile views</ul>
+                <ul>member since</ul>
               </li>
             </div>
-            <div className="supplierProfileHero#"></div>
+            <div className="supplierProfileHero3">
+              <LoremIpsum p={1} />
+            </div>
             <div className="supplierProfileHero#"></div>
             <div className="supplierProfileHero#"></div>
           </Col>
