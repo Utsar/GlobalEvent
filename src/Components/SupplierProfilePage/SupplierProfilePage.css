@@ -1,0 +1,48 @@
+.SupplierProfilePageNav {
+  background-color: black;
+}
+.SupplierProfileNavItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+  cursor: pointer;
+}
+.supplierHeroImg {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-position: 50% 68%;
+  left: 0;
+  right: 0;
+}
+.supplierProfileHeroContainer {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+}
+.supplierProfileNavbar {
+  background-color: black;
+  height: 100vh;
+}
+.supplierProfileHero1 {
+  display: flex;
+  justify-content: space-between;
+}
+.supplierProfileHero2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clientProfileInfo {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.clientProfileInfo > ul {
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: 300;
+  font-size: 1.1em;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
