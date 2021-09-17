@@ -1,24 +1,23 @@
 .clientProfilePageContainer {
   background-color: black;
 }
-/* .clientProfilePageWrapper {
-  background-color: #2c394b;
-  min-height: 100vh;
-} */
-.profileImageBlur {
-  object-fit: cover;
+
+.clientProfileAvatar {
+  display: flex;
+  justify-content: center;
 }
-/* .clientProfileBackground {
-  background-image: url("../../Assets/profileFire.jpg");
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 87vh;
-  object-fit: cover;
-} */
-.clientProfileHero {
-  background-color: antiquewhite;
-  height: 100%;
+.clientProfileName {
+  display: flex;
+  justify-content: center;
+}
+.clientProfileName > div > p {
+  display: flex;
+  justify-content: center;
+}
+.clientProfileNavItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+  cursor: pointer;
 }

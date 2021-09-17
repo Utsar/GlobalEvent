@@ -25,3 +25,5 @@ export const LandingFooter = () => {
     </>
   );
 };
+
+export default LandingFooter;
