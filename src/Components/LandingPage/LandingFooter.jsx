@@ -1,5 +1,6 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
+import { withRouter } from "react-router";
 import "./LandingPage.css";
 
 export const LandingFooter = () => {
@@ -25,5 +26,4 @@ export const LandingFooter = () => {
     </>
   );
 };
-
-export default LandingFooter;
+export default withRouter(LandingFooter);

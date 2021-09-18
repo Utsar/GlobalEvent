@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
+import { withRouter } from "react-router";
 
 export const LandingIntro = () => {
   return (
@@ -13,3 +14,4 @@ export const LandingIntro = () => {
     </>
   );
 };
+export default withRouter(LandingIntro);

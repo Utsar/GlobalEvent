@@ -7,6 +7,7 @@ import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
 import LandingFooter from "../LandingPage/LandingFooter";
 
 import logoWhite from "../../Assets/logoWhite.png";
+import { withRouter } from "react-router";
 
 export const ClientProfilePage = () => {
   return (
@@ -92,3 +93,4 @@ export const ClientProfilePage = () => {
     </>
   );
 };
+export default withRouter(ClientProfilePage);

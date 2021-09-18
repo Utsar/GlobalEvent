@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandingPage.css";
 import Video from "../../Assets/landingPageVideo.mp4";
+import { withRouter } from "react-router";
 
 export const LandingBackgroundVideo = () => {
   return (
@@ -17,3 +18,4 @@ export const LandingBackgroundVideo = () => {
     </>
   );
 };
+export default withRouter(LandingBackgroundVideo);

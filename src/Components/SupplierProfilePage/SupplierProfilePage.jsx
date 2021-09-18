@@ -1,7 +1,7 @@
 import React from "react";
 import "./SupplierProfilePage.css";
 import { useState } from "react";
-import { Container, Row, Navbar, Nav, NavDropdown, Col } from "react-bootstrap";
+import { Container, Row, Navbar, Nav, Col } from "react-bootstrap";
 import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
 import logoWhite from "../../Assets/logoWhite.png";
 import supplierHero from "../../Assets/supplierhero.jpg";
@@ -145,3 +145,4 @@ export const SupplierProfilePage = () => {
     </>
   );
 };
+export default SupplierProfilePage;

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./LandingPage.css";
 import { Form, Row, Button, Col } from "react-bootstrap";
+import { withRouter } from "react-router";
 
 const { REACT_APP_BACKEND_URL } = process.env;
 
@@ -142,3 +143,5 @@ export const LandingEventForm = () => {
     </>
   );
 };
+
+export default withRouter(LandingEventForm);

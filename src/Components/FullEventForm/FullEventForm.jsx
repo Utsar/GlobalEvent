@@ -1,4 +1,3 @@
-import { LandingEventForm } from "../LandingPage/LandingEventForm";
 import "./FullEventForm.css";
 import {
   Form,
@@ -67,3 +66,4 @@ export const FullEventForm = () => {
     </>
   );
 };
+export default withRouter(FullEventForm);

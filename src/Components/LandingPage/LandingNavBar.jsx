@@ -2,8 +2,9 @@ import React from "react";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./LandingPage.css";
 import logoWhite from "../../Assets/logoWhite.png";
+import { withRouter } from "react-router";
 
-const LandingNavBar = () => {
+export const LandingNavBar = () => {
   return (
     <>
       <Navbar
@@ -44,4 +45,4 @@ const LandingNavBar = () => {
     </>
   );
 };
-export default LandingNavBar;
+export default withRouter(LandingNavBar);
