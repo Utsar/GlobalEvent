@@ -7,6 +7,7 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import { withRouter } from "react-router";
 
 export const FullEventForm = () => {
   return (
