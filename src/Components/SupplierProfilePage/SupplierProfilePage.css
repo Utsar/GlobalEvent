@@ -38,7 +38,14 @@
   text-decoration: none;
   list-style: none;
   cursor: pointer;
+  color: lightgray;
+}
+.supplierProfileNavItems > ul:hover {
   color: white;
+  transition: opacity 400ms ease-in-out;
+}
+.supplierProfileNavItems > ul:not(:hover) {
+  transition: opacity 400ms ease-in-out;
 }
 .supplierProfileHero1 {
   display: flex;
