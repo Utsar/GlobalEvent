@@ -40,7 +40,7 @@ export const SupplierProfilePage = () => {
             bg="transparent"
             variant="dark"
           >
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
               <img
                 src={logoWhite}
                 width="195px"

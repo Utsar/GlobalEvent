@@ -14,6 +14,12 @@ export const Login = () => {
           placeholder="password"
         />
         <input type="button" className="loginButton" value="Login" />
+        <input
+          type="button"
+          className="loginButton"
+          href="/register"
+          value="Register"
+        />
       </div>
     </>
   );
