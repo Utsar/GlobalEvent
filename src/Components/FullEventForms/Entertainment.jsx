@@ -43,7 +43,7 @@ export const Entertainment = ({
               as="textarea"
               type="text"
               //   value={initialEvent.entertainmentDescription}
-              id="enterntainmentDescription"
+              id="entertainmentDescription"
               onChange={(e) => handleChange(e)}
               placeholder="rock band, classical..."
               rows={3}

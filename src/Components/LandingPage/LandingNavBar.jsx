@@ -26,7 +26,7 @@ export const LandingNavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#ClientLogIn">Log In</Nav.Link>
+            <Nav.Link href="/Login">Log In</Nav.Link>
             <NavDropdown
               className="landingNavDrop"
               title="Become a supplier"

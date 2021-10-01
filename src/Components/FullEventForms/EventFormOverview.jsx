@@ -42,22 +42,24 @@ export const EventFormOverview = ({ values }) => {
   return (
     <>
       <Form className="finalEventFormContainer">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
           <Form.Label className="eventSummary">Event Summary</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
+          <Form.Control type="email" placeholder={eventType} />
+          <Form.Control type="email" placeholder={location} />
+          <Form.Control type="email" placeholder={attendees} />
+          <Form.Control type="email" placeholder={datetime} />
+          <Form.Control type="email" placeholder={venueType} />
+          <Form.Control type="email" placeholder={venueDescription} />
+          <Form.Control type="email" placeholder={venueBudget} />
+          <Form.Control type="email" placeholder={catererType} />
+          <Form.Control type="email" placeholder={catererDescription} />
+          <Form.Control type="email" placeholder={catererBudget} />
+          <Form.Control type="email" placeholder={entertainmentType} />
+          <Form.Control type="email" placeholder={entertainmentDescription} />
+          <Form.Control type="email" placeholder={entertainmentBudget} />
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" onClick={handleSubmit}>
           Submit
         </Button>
       </Form>
