@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SupplierProfilePage } from "./Components/SupplierProfilePage/SupplierProfilePage";
-import { LandingEventForm } from "./Components/LandingPage/LandingEventForm";
+
 import { LandingBackgroundVideo } from "./Components/LandingPage/LandingBackgroundVideo";
 import { LandingNavBar } from "./Components/LandingPage/LandingNavBar";
 import { LandingFooter } from "./Components/LandingPage/LandingFooter";
-import { LandingIntro } from "./Components/LandingPage/LandingIntro";
 import { ClientProfilePage } from "./Components/ClientProfilePage/ClientProfilePage";
 import { Venue } from "./Components/FullEventForms/Venue";
 import { Login } from "./Components/Login/Login";
 import EventForm from "./Components/FullEventForms/EventForm";
+import Register from "./Components/Login/Register";
 
 export const App = () => {
   return (
@@ -23,7 +23,6 @@ export const App = () => {
               <>
                 <LandingBackgroundVideo />
                 <LandingNavBar />
-                {/* <LandingIntro /> */}
                 <EventForm />
                 <LandingFooter />
               </>
@@ -51,6 +50,18 @@ export const App = () => {
                 <LandingBackgroundVideo />
                 <LandingNavBar />
                 <Login />
+                <LandingFooter />
+              </>
+            )}
+          />
+          <Route
+            exact
+            path="/register"
+            render={() => (
+              <>
+                <LandingBackgroundVideo />
+                <LandingNavBar />
+                <Register />
                 <LandingFooter />
               </>
             )}
