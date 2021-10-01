@@ -1,4 +1,4 @@
-import "./FullEventForm.css";
+import "./FullEventFormsStyle.css";
 import {
   Form,
   Button,
@@ -9,43 +9,62 @@ import {
 } from "react-bootstrap";
 import { withRouter } from "react-router";
 
-export const FullEventForm = () => {
+export const Venue = ({ values, handleChange, handleNext, handlePrevious }) => {
   return (
     <>
       <Row className="fullEventFormContainer">
         <Form className="my-1" style={{ color: "white" }}>
-          <Form.Group className="my-1" controlId="formBasicEmail">
+          <Form.Group className="my-1">
             <Form.Label>
               <h4>What type of Venue do you need?</h4>
             </Form.Label>
-            <Form.Control type="text" placeholder="choose or venue type" />
+            <Form.Select
+              type="text"
+              // value={initialEvent.venueType}
+              id="venueType"
+              onChange={(e) => handleChange(e)}
+              placeholder="choose or venue type"
+            >
+              <option>Choose Venue Type</option>
+              <option>Hotel</option>
+              <option>Restaurant</option>
+              <option>Golf course</option>
+              <option>Church</option>
+            </Form.Select>
           </Form.Group>
-          <Form.Group className="my-1" controlId="exampleForm.ControlTextarea1">
+          <Form.Group className="my-1">
             <Form.Label>Description</Form.Label>
             <Form.Control
               as="textarea"
+              type="text"
+              // value={initialEvent.venueDescription}
+              id="venueDescription"
+              onChange={(e) => handleChange(e)}
               placeholder="Describe your ideal venue"
               rows={3}
             />
           </Form.Group>
-          <Form.Group controlId="formFile" className="my-1">
+          <Form.Group className="my-1">
             <Form.Label>Why not upload a photo?</Form.Label>
             <Form.Control type="file" />
           </Form.Group>
 
-          <Form.Group className="my-1" controlId="formBasicPassword">
+          <Form.Group className="my-1">
             <Form.Label>Budget</Form.Label>
             <InputGroup>
               <InputGroup.Text>£</InputGroup.Text>
               <FormControl
-                id="inlineFormInputGroupUsername"
+                type="text"
+                // value={initialEvent.venueBudget}
+                id="venueBudget"
+                onChange={(e) => handleChange(e)}
                 placeholder="Budget"
               />
             </InputGroup>
           </Form.Group>
           <Row className="fullEventFormButtons">
             <Col xs={12} md={4}>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" onClick={handlePrevious}>
                 Back
               </Button>
             </Col>
@@ -57,7 +76,7 @@ export const FullEventForm = () => {
             </Col>
 
             <Col xs={12} md={4}>
-              <Button variant="primary" type="submit">
+              <Button variant="primary" onClick={handleNext}>
                 Next
               </Button>
             </Col>
@@ -67,4 +86,4 @@ export const FullEventForm = () => {
     </>
   );
 };
-export default withRouter(FullEventForm);
+export default withRouter(Venue);

@@ -1,11 +1,11 @@
 .form {
   position: absolute;
-  top: 21%;
-  left: 34%;
+  top: 20%;
+  left: 36%;
   right: 33%;
   z-index: 2;
-  height: 300px;
-  width: 450px;
+  height: 350px;
+  width: 420px;
   border-radius: 5px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
@@ -20,7 +20,7 @@
 
 .loginForm {
   position: absolute;
-  top: 30%;
+  top: 33%;
   left: 40%;
   height: 150px;
   width: 200px;

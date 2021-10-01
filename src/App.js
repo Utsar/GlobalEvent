@@ -7,8 +7,9 @@ import { LandingNavBar } from "./Components/LandingPage/LandingNavBar";
 import { LandingFooter } from "./Components/LandingPage/LandingFooter";
 import { LandingIntro } from "./Components/LandingPage/LandingIntro";
 import { ClientProfilePage } from "./Components/ClientProfilePage/ClientProfilePage";
-import { FullEventForm } from "./Components/FullEventForm/FullEventForm";
+import { Venue } from "./Components/FullEventForms/Venue";
 import { Login } from "./Components/Login/Login";
+import EventForm from "./Components/FullEventForms/EventForm";
 
 export const App = () => {
   return (
@@ -22,8 +23,8 @@ export const App = () => {
               <>
                 <LandingBackgroundVideo />
                 <LandingNavBar />
-                <LandingIntro />
-                <LandingEventForm />
+                {/* <LandingIntro /> */}
+                <EventForm />
                 <LandingFooter />
               </>
             )}
@@ -37,7 +38,7 @@ export const App = () => {
               <>
                 <LandingBackgroundVideo />
                 <LandingNavBar />
-                <FullEventForm />
+                <Venue />
                 <LandingFooter />
               </>
             )}

@@ -1,54 +1,46 @@
 import React from "react";
-import { useState } from "react";
+
 import "./LandingPage.css";
 import { Form, Row, Button, Col } from "react-bootstrap";
-import { withRouter, Link } from "react-router";
+import { withRouter } from "react-router";
+import LandingIntro from "./LandingIntro";
 
-const { REACT_APP_BACKEND_URL } = process.env;
+// const { REACT_APP_BACKEND_URL } = process.env;
 
-export const LandingEventForm = () => {
-  const [initialEvent, setinitialEvent] = useState({
-    eventType: "",
-    location: "",
-    attendees: 1,
-    datetime: "",
-  });
+export const LandingEventForm = ({ handleChange, handleNext }) => {
+  console.log(handleChange);
 
-  const inputChange = (e) => {
-    let id = e.target.id;
-    setinitialEvent({ ...initialEvent, [id]: e.target.value });
-  };
-
-  const saveInitialEvent = async (e) => {
-    e.preventDefault();
-    const url = `${REACT_APP_BACKEND_URL}/initialevents`;
-    try {
-      let response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(initialEvent),
-      });
-      if (response.status === 200) {
-        console.log(response.status);
-        setinitialEvent({
-          ...initialEvent,
-          eventType: "",
-          location: "",
-          attendees: 1,
-          datetime: "",
-        });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const saveInitialEvent = async (e) => {
+  //   e.preventDefault();
+  //   const url = `${REACT_APP_BACKEND_URL}/initialevents`;
+  //   try {
+  //     let response = await fetch(url, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(initialEvent),
+  //     });
+  //     if (response.status === 200) {
+  //       console.log(response.status);
+  //       setinitialEvent({
+  //         ...initialEvent,
+  //         eventType: "",
+  //         location: "",
+  //         attendees: 1,
+  //         datetime: "",
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   return (
     <>
+      <LandingIntro />
       <Form
         className="landingFormContainer"
-        onSubmit={(e) => saveInitialEvent(e)}
+        // onSubmit={(e) => saveInitialEvent(e)}
       >
         <Row>
           <Col
@@ -63,9 +55,9 @@ export const LandingEventForm = () => {
             <Form.Control
               placeholder="What are you planning?"
               type="text"
-              value={initialEvent.eventType}
+              // value={values.eventType}
               id="eventType"
-              onChange={(e) => inputChange(e)}
+              onChange={(e) => handleChange(e)}
             />
           </Col>
 
@@ -78,9 +70,17 @@ export const LandingEventForm = () => {
               paddingBottom: "2px",
             }}
           >
-            <Form.Select defaultValue="Choose...">
+            <Form.Select
+              placeholder="Choose..."
+              // value={values.location}
+              id="location"
+              onChange={(e) => handleChange(e)}
+            >
               <option>Location</option>
-              <option>...</option>
+              <option>London</option>
+              <option>Manchester</option>
+              <option>South west</option>
+              <option>South east</option>
             </Form.Select>
           </Col>
           <Col
@@ -93,9 +93,9 @@ export const LandingEventForm = () => {
             }}
           >
             <Form.Select
-              value={initialEvent.attendees}
+              // value={values.attendees}
               id="attendees"
-              onChange={(e) => inputChange(e)}
+              onChange={(e) => handleChange(e)}
             >
               <option>No.people</option>
               <option>0-10</option>
@@ -122,9 +122,9 @@ export const LandingEventForm = () => {
               <Form.Control
                 placeholder="date"
                 type="datetime-local"
-                value={initialEvent.datetime}
-                id="date"
-                onChange={(e) => inputChange(e)}
+                // value={values.datetime}
+                id="datetime"
+                onChange={(e) => handleChange(e)}
               />
             </Form.Group>
           </Col>
@@ -134,7 +134,7 @@ export const LandingEventForm = () => {
             lg={"auto"}
             style={{ paddingRight: "5px", paddingLeft: "5px" }}
           >
-            <Button variant="primary" type="submit">
+            <Button variant="primary" onClick={handleNext}>
               Submit
             </Button>
           </Col>
