@@ -2,14 +2,23 @@ import React from "react";
 import "./FullEventFormsStyle.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { Button, Form } from "react-bootstrap";
-import axios from "axios";
+import { backend } from "../../BackendConnection";
+import { useHistory } from "react-router";
+import { useContext } from "react";
+import { AuthContext } from "../../Context/AuthContext";
+import { createContext } from "react";
 
-const backend = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL,
-  //   withCredentials: true,
-});
+// const backend = axios.create({
+//   baseURL: process.env.REACT_APP_BACKEND_URL,
+//   //   withCredentials: true,
+// });
 
 export const EventFormOverview = ({ values }) => {
+  const client = useContext(AuthContext);
+  const history = useHistory();
+  const initialEvent = createContext(values);
+  console.log("this is context", initialEvent);
+
   const {
     eventType,
     location,
@@ -27,11 +36,18 @@ export const EventFormOverview = ({ values }) => {
   } = values;
 
   //   Save to db
+  // useEffect(() => {
+  //   localStorage.setItem(values, JSON.stringify(values));
+  // }, [values]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await backend.post("/events", values).then(
       (response) => {
-        console.log(response);
+        {
+          client ? history.push("/client") : history.push("/register");
+        }
+        console.log("this is response log", response);
       },
       (error) => {
         console.log(error);
@@ -44,19 +60,19 @@ export const EventFormOverview = ({ values }) => {
       <Form className="finalEventFormContainer">
         <Form.Group className="mb-3">
           <Form.Label className="eventSummary">Event Summary</Form.Label>
-          <Form.Control type="email" placeholder={eventType} />
-          <Form.Control type="email" placeholder={location} />
-          <Form.Control type="email" placeholder={attendees} />
-          <Form.Control type="email" placeholder={datetime} />
-          <Form.Control type="email" placeholder={venueType} />
-          <Form.Control type="email" placeholder={venueDescription} />
-          <Form.Control type="email" placeholder={venueBudget} />
-          <Form.Control type="email" placeholder={catererType} />
-          <Form.Control type="email" placeholder={catererDescription} />
-          <Form.Control type="email" placeholder={catererBudget} />
-          <Form.Control type="email" placeholder={entertainmentType} />
-          <Form.Control type="email" placeholder={entertainmentDescription} />
-          <Form.Control type="email" placeholder={entertainmentBudget} />
+          <Form.Control type="text" placeholder={eventType} />
+          <Form.Control type="text" placeholder={location} />
+          <Form.Control type="text" placeholder={attendees} />
+          <Form.Control type="text" placeholder={datetime} />
+          <Form.Control type="text" placeholder={venueType} />
+          <Form.Control type="text" placeholder={venueDescription} />
+          <Form.Control type="text" placeholder={venueBudget} />
+          <Form.Control type="text" placeholder={catererType} />
+          <Form.Control type="text" placeholder={catererDescription} />
+          <Form.Control type="text" placeholder={catererBudget} />
+          <Form.Control type="text" placeholder={entertainmentType} />
+          <Form.Control type="text" placeholder={entertainmentDescription} />
+          <Form.Control type="text" placeholder={entertainmentBudget} />
         </Form.Group>
 
         <Button variant="primary" onClick={handleSubmit}>
