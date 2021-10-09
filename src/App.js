@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SupplierProfilePage } from "./Components/SupplierProfilePage/SupplierProfilePage";
 
@@ -10,8 +15,11 @@ import { Venue } from "./Components/FullEventForms/Venue";
 import { Login } from "./Components/Login/Login";
 import EventForm from "./Components/FullEventForms/EventForm";
 import Register from "./Components/Login/Register";
+import { useContext } from "react";
+import { AuthContext } from "./Context/AuthContext";
 
 export const App = () => {
+  const { client } = useContext(AuthContext);
   return (
     <Router>
       <>
@@ -29,7 +37,9 @@ export const App = () => {
             )}
           />
           <Route path="/supplier" component={SupplierProfilePage} />
-          <Route path="/client" component={ClientProfilePage} />
+          <Route path="/client">
+            {client ? <ClientProfilePage /> : <Register />}
+          </Route>
           <Route
             exact
             path="/createevent"
@@ -42,30 +52,13 @@ export const App = () => {
               </>
             )}
           />
-          <Route
-            exact
-            path="/login"
-            render={() => (
-              <>
-                <LandingBackgroundVideo />
-                <LandingNavBar />
-                <Login />
-                <LandingFooter />
-              </>
-            )}
-          />
-          <Route
-            exact
-            path="/register"
-            render={() => (
-              <>
-                <LandingBackgroundVideo />
-                <LandingNavBar />
-                <Register />
-                <LandingFooter />
-              </>
-            )}
-          />
+          <Route exact path="/login">
+            {client ? <Redirect to="/client" /> : <Login />}
+          </Route>
+
+          <Route exact path="/register">
+            {client ? <Redirect to="/client" /> : <Register />}
+          </Route>
         </Switch>
       </>
     </Router>

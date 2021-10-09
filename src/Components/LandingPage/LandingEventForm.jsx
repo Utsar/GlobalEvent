@@ -121,7 +121,7 @@ export const LandingEventForm = ({ handleChange, handleNext }) => {
             <Form.Group>
               <Form.Control
                 placeholder="date"
-                type="datetime-local"
+                type="date"
                 // value={values.datetime}
                 id="datetime"
                 onChange={(e) => handleChange(e)}

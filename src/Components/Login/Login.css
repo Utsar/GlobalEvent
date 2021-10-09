@@ -38,6 +38,17 @@
   font-weight: 400;
   padding: 4px 4px 2px 10px;
 }
+.loginForm input[type="email"] {
+  width: 280px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px 4px 2px 10px;
+}
 .loginForm input::placeholder {
   color: #fff;
   opacity: 0.9;
@@ -79,7 +90,7 @@
 .loginForm input[type="button"]:active {
   opacity: 0.6;
 }
-.loginForm input[type="text"]:focus {
+.loginForm input[type="email"]:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
