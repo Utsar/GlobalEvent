@@ -1,0 +1,23 @@
+.registerform {
+  position: absolute;
+  top: 25%;
+  left: 36%;
+  right: 33%;
+  z-index: 2;
+  height: 400px;
+  width: 430px;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  /* filter: drop-shadow(2px 4px 6px black);
+    background-color: rgba(152 151 151 / 10%); */
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.09);
+  /* box-shadow: inset 0 0 0 200px rgb(255 255 255 / 8%); */
+  border-top: 2px solid rgba(225, 225, 225, 0.3);
+  border-left: 2px solid rgba(225, 225, 225, 0.1);
+  border-right: 2px solid rgba(225, 225, 225, 0.2);
+}
+
+.registerInput {
+  margin-top: 10px;
+}

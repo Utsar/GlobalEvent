@@ -1,0 +1,63 @@
+.clientProfilePageContainer {
+  background-color: black;
+  height: 100vh;
+}
+
+.clientProfileBackgroundImage {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+  z-index: -1;
+}
+
+.clientProfileAvatar {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+  top: -13%;
+  max-height: 100px;
+}
+.clientProfileName {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 20%;
+  left: 41%;
+  color: white;
+}
+.clientProfileName > div > p {
+  display: flex;
+  justify-content: center;
+}
+.clientProfileNavItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
+  cursor: pointer;
+}
+.profileMenu {
+  background-color: black;
+  flex: 1;
+}
+.profileNewsFeed {
+  background-color: black;
+}
+.clientProfileButtons {
+  display: flex;
+  justify-content: center;
+}
+.clientProfileInfo {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 15px;
+}
+.clientProfileInfo > p {
+  color: lightgray;
+  cursor: pointer;
+}
+.clientProfileInfo > p:hover {
+  color: white;
+  transition: 400 ease-in-out;
+}
