@@ -8,9 +8,12 @@
 }
 .fullEventFormButtons {
   /* align-items: center; */
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* left: 35%;
+  right: 35%; */
 }
 
 /* EventFormOverview */
