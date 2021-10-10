@@ -1,23 +1,33 @@
 import React, { useRef, useContext } from "react";
 import "./Login.css";
-import { withRouter } from "react-router";
-import { loginCall } from "../../ApiCalls";
+import { useHistory, withRouter } from "react-router";
+
 import { AuthContext } from "../../Context/AuthContext";
 import LandingBackgroundVideo from "../LandingPage/LandingBackgroundVideo";
 import LandingNavBar from "../LandingPage/LandingNavBar";
 import LandingFooter from "../LandingPage/LandingFooter";
+import { backend } from "../../BackendConnection";
 
 export const Login = () => {
   const email = useRef();
   const password = useRef();
+  const history = useHistory();
   const { client, isFetching, error, dispatch } = useContext(AuthContext);
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    loginCall(
-      { email: email.current.value, password: password.current.value },
-      dispatch
-    );
+    try {
+      const response = await backend.post("/clients/login", {
+        email: email.current.value,
+        password: password.current.value,
+      });
+      localStorage.setItem("token", response.data.accessToken);
+      await backend.post(
+        "/events",
+        JSON.parse(localStorage.getItem("newEvent"))
+      );
+      history.push("/client");
+    } catch (error) {}
   };
 
   console.log(client);

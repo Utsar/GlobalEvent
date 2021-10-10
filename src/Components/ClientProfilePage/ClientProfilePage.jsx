@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./ClientProfilePage.css";
 import { Container, Row, Navbar, Nav, NavDropdown, Col } from "react-bootstrap";
 import { BsList } from "react-icons/bs";
@@ -9,8 +9,26 @@ import LandingFooter from "../LandingPage/LandingFooter";
 import ProfileBackground from "../../Assets/clientprofilebackground.jpg";
 import logoWhite from "../../Assets/logoWhite.png";
 import { withRouter } from "react-router";
+import { AuthContext } from "../../Context/AuthContext";
+import { backend } from "../../BackendConnection";
 
 export const ClientProfilePage = () => {
+  const { client, isFetching, error, dispatch } = useContext(AuthContext);
+  useEffect(() => {
+    const fetchClient = async () => {
+      const response = await backend.get("/clients/me");
+      dispatch({ type: "LOGIN_SUCCESS", payload: response.data });
+      console.log(client);
+
+      console.log("this is response", response.data);
+    };
+    fetchClient();
+  }, []);
+
+  // useEffect(() => {
+  //   console.log("this is client", client);
+  // }, [client]);
+
   return (
     <>
       <Container fluid className="clientProfilePageContainer">

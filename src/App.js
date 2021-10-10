@@ -38,20 +38,9 @@ export const App = () => {
           />
           <Route path="/supplier" component={SupplierProfilePage} />
           <Route path="/client">
-            {client ? <ClientProfilePage /> : <Register />}
+            <ClientProfilePage />
           </Route>
-          <Route
-            exact
-            path="/createevent"
-            render={(props) => (
-              <>
-                <LandingBackgroundVideo />
-                <LandingNavBar />
-                <Venue />
-                <LandingFooter />
-              </>
-            )}
-          />
+
           <Route exact path="/login">
             {client ? <Redirect to="/client" /> : <Login />}
           </Route>

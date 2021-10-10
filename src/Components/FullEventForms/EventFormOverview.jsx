@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FullEventFormsStyle.css";
 import { Col, Container, Row } from "react-bootstrap";
 import { Button, Form } from "react-bootstrap";
@@ -35,24 +35,25 @@ export const EventFormOverview = ({ values }) => {
     entertainmentBudget,
   } = values;
 
-  //   Save to db
-  // useEffect(() => {
-  //   localStorage.setItem(values, JSON.stringify(values));
-  // }, [values]);
+  // Save to db
+  useEffect(() => {
+    localStorage.setItem("newEvent", JSON.stringify(values));
+  }, [values]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await backend.post("/events", values).then(
-      (response) => {
-        {
-          client ? history.push("/client") : history.push("/register");
-        }
-        console.log("this is response log", response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+    history.push("/login");
+    // const response = await backend.post("/events", values).then(
+    //   (response) => {
+    //     {
+    //       client ? history.push("/client") : history.push("/register");
+    //     }
+    //     console.log("this is response log", response);
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    // );
   };
 
   return (
