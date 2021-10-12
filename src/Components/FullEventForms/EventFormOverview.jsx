@@ -42,7 +42,7 @@ export const EventFormOverview = ({ values }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    history.push("/login");
+    history.push("/register");
     // const response = await backend.post("/events", values).then(
     //   (response) => {
     //     {

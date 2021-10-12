@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Register.css";
-import "./Login.css";
+// import "./Login.css";
 import { backend } from "../../BackendConnection";
 import { useHistory } from "react-router";
 import LandingBackgroundVideo from "../LandingPage/LandingBackgroundVideo";
@@ -49,8 +49,8 @@ const Register = () => {
     <>
       <LandingBackgroundVideo />
       <LandingNavBar />
-      <div className="registerform"></div>
-      <form className="loginForm">
+      <div className="frostedForm"></div>
+      <form className="registerForm">
         <input
           type="text"
           ref={firstName}
@@ -102,6 +102,12 @@ const Register = () => {
           className="loginButton"
           value="Register"
           onClick={handleClick}
+        />
+        <input
+          type="button"
+          className="loginButton"
+          value="Log in"
+          onClick={() => history.push("/login")}
         />
       </form>
       <LandingFooter />
