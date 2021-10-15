@@ -25,7 +25,6 @@ export const Venue = ({ values, handleChange, handleNext, handlePrevious }) => {
               onChange={(e) => handleChange(e)}
               placeholder="choose or venue type"
             >
-              <option>Choose Venue Type</option>
               <option>Hotel</option>
               <option>Restaurant</option>
               <option>Golf course</option>

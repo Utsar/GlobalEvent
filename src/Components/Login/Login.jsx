@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import LandingBackgroundVideo from "../LandingPage/LandingBackgroundVideo";
 import LandingNavBar from "../LandingPage/LandingNavBar";
 import LandingFooter from "../LandingPage/LandingFooter";
-import { backend } from "../../BackendConnection";
+import { backend, resetBackend } from "../../BackendConnection";
 
 export const Login = () => {
   const email = useRef();
@@ -22,6 +22,9 @@ export const Login = () => {
         password: password.current.value,
       });
       localStorage.setItem("token", response.data.accessToken);
+
+      resetBackend();
+
       await backend.post(
         "/events",
         JSON.parse(localStorage.getItem("newEvent"))
@@ -29,6 +32,7 @@ export const Login = () => {
       history.push("/client");
     } catch (error) {}
   };
+  // localStorage.removeItem("newEvent");
 
   console.log(client);
   return (
@@ -41,14 +45,14 @@ export const Login = () => {
           type="email"
           required
           className="loginInput"
-          placeholder="email"
+          placeholder="Email"
           ref={email}
         />
         <input
           type="password"
           required
           className="loginPassword"
-          placeholder="password"
+          placeholder="Password"
           ref={password}
         />
         <input

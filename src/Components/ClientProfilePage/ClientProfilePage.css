@@ -1,7 +1,10 @@
-.clientProfilePageContainer {
+body {
   background-color: black;
-  height: 100vh;
 }
+/* .clientProfilePageContainer {
+  background-color: black;
+  height: 100vw;
+} */
 
 .clientProfileBackgroundImage {
   object-fit: cover;
@@ -23,7 +26,7 @@
   justify-content: center;
   position: absolute;
   top: 20%;
-  left: 41%;
+  left: 42%;
   color: white;
 }
 .clientProfileName > div > p {
@@ -60,4 +63,53 @@
 .clientProfileInfo > p:hover {
   color: white;
   transition: 400 ease-in-out;
+}
+
+.clientProfileEventsContainer {
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 700px rgba(225, 225, 225, 0.5);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 10px;
+  padding-top: 20px;
+  color: white;
+}
+.EventFormContainer {
+  display: flex;
+  border: 1px solid white;
+  background-color: rgba(68, 68, 156, 0.753);
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  max-width: 600px;
+  padding: 10px;
+  margin-bottom: 7px;
+}
+.eventsDescription {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.eventsDescription > div {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.eventsDescription > div > span {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* font-weight: 400; */
+  font-size: 16px;
+}
+.eventsCategories {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
 }

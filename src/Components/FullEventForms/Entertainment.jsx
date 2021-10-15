@@ -30,6 +30,7 @@ export const Entertainment = ({
               onChange={(e) => handleChange(e)}
               placeholder="choose entertainment type"
             >
+              <option>Choose Entertainment</option>
               <option>Dj</option>
               <option>Band</option>
               <option>String (trio - quintet)</option>

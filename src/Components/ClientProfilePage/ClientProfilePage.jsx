@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "./ClientProfilePage.css";
+import "../FullEventForms/FullEventFormsStyle.css";
+
 import {
   Container,
   Row,
@@ -23,6 +25,32 @@ import { AuthContext } from "../../Context/AuthContext";
 import { backend } from "../../BackendConnection";
 
 export const ClientProfilePage = () => {
+  // Date.prototype.toShortFormat = function () {
+  //   let monthNames = [
+  //     "Jan",
+  //     "Feb",
+  //     "Mar",
+  //     "Apr",
+  //     "May",
+  //     "Jun",
+  //     "Jul",
+  //     "Aug",
+  //     "Sep",
+  //     "Oct",
+  //     "Nov",
+  //     "Dec",
+  //   ];
+
+  //   let day = this.getDate();
+
+  //   let monthIndex = this.getMonth();
+  //   let monthName = monthNames[monthIndex];
+
+  //   let year = this.getFullYear();
+
+  //   return `${day}-${monthName}-${year}`;
+  // };
+
   const { client, dispatch } = useContext(AuthContext);
 
   useEffect(() => {
@@ -100,7 +128,9 @@ export const ClientProfilePage = () => {
               </Button>
             </div>
             <div className="clientProfileInfo">
-              <p> 2 active events</p>
+              <p>
+                <span>{client?.events.length}</span> active events
+              </p>
 
               <p>4 completed events</p>
 
@@ -109,63 +139,80 @@ export const ClientProfilePage = () => {
           </Col>
         </Row>
         <Row>
-          {/* <Col className="clientProfileEvents" xs={12}>
-            <div className="clientProfileEventsContainer">
-              <h1>My events</h1>
-              {client.events.map((event) => (
-                <Card key={event._id} bg={"transparent"} text="white">
-                  <Card.Body>
-                    <Card.Title>Event name: {event.eventType}</Card.Title>
-                    <Card.Title>Event location: {event.location}</Card.Title>
-                    <Card.Title>Event attendees: {event.attendees}</Card.Title>
-                    <Card.Title>Event attendees: {event.datetime}</Card.Title>
-                  </Card.Body>
-                  <Card.Body>
-                    <Card.Title>Category:</Card.Title>
-                  </Card.Body>
-                  <ListGroup className="list-group-flush">
-                    <ListGroupItem>Venue: {event.venueType}</ListGroupItem>
-                    <ListGroupItem>
-                      Description: {event.venueDescription}
-                    </ListGroupItem>
-                    <ListGroupItem>Budget: {event.venueBudget}</ListGroupItem>
-                  </ListGroup>
+          {client?.events.length > 0 ? (
+            client.events.map((event) => (
+              <Col key={event._id} xs={12} md={5}>
+                <div className="EventFormContainer">
+                  <div className="eventsDescription">
+                    <div>
+                      {/* <span>Name:</span> */}
+                      <span>{event.eventType}</span>in
+                      {/* <span>Location:</span> */}
+                      <span>{event.location}</span>for
+                      {/* <span>No. :</span> */}
+                      <span>{event.attendees}</span>people
+                      {/* <span>Date:</span> */}
+                      <span>{event.datetime}</span>
+                    </div>
+                  </div>
+                  <br />
+                  <div className="eventsCategories">
+                    {/* <h4 className="eventGategory">Gategory 1</h4> */}
+                    <h5>
+                      Venue : <span>{event.venueType}</span>
+                    </h5>
+                    <h5>
+                      Description: <span>{event.venueDescription}</span>
+                    </h5>
+                    <h5 className="eventBudget">
+                      Budget: <span>£{event.venueBudget}</span>
+                    </h5>
 
-                  <Card.Body>
-                    <Card.Title>Category:</Card.Title>
-                  </Card.Body>
-                  <ListGroup className="list-group-flush">
-                    <ListGroupItem>
-                      Entertainment: {event.entertainmentType}
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      Description: {event.entertainmentDescription}
-                    </ListGroupItem>
-                    <ListGroupItem>
-                      Budget: {event.entertainmentBudget}
-                    </ListGroupItem>
-                  </ListGroup>
-
-                  <Card.Body>
-                    <Card.Title>Category:</Card.Title>
-                  </Card.Body>
-                  <ListGroup className="list-group-flush">
-                    <ListGroupItem>Caterer: {event.catererType}</ListGroupItem>
-                    <ListGroupItem>
-                      Description: {event.catererDescription}
-                    </ListGroupItem>
-                    <ListGroupItem>Budget: {event.Budget}</ListGroupItem>
-                  </ListGroup>
-                  <Card.Body>
-                    <Card.Link href="#">Card Link</Card.Link>
-                    <Card.Link href="#">Another Link</Card.Link>
-                  </Card.Body>
-                </Card>
-              ))}
-            </div>
-          </Col> */}
+                    <br />
+                    {/* <h4 className="eventGategory">Gategory 2</h4> */}
+                    <h5>
+                      Catering: <span>{event.catererType}</span>
+                    </h5>
+                    <h5>
+                      Description: <span>{event.catererDescription}</span>
+                    </h5>
+                    <h5 className="eventBudget">
+                      Budget: <span>£{event.catererBudget}</span>
+                    </h5>
+                    <br />
+                    {/* <h4 className="eventGategory">Gategory 3</h4> */}
+                    <h5>
+                      Entertainment: <span>{event.entertainmentType} </span>
+                    </h5>
+                    <h5>
+                      Description: <span>{event.entertainmentDescription}</span>
+                    </h5>
+                    <h5 className="eventBudget">
+                      Budget: <span>£{event.entertainmentBudget}</span>
+                    </h5>
+                    <br />
+                  </div>
+                  <input
+                    type="button"
+                    className="loginButton"
+                    value="Publish"
+                    onClick={event.handleSubmit}
+                  />
+                  <input
+                    type="button"
+                    className="loginButton"
+                    value="Edit"
+                    onClick={event.handleSubmit}
+                  />
+                </div>
+              </Col>
+            ))
+          ) : (
+            <h1>No events yet</h1>
+          )}
         </Row>
       </Container>
+      {/* <LandingFooter /> */}
     </>
   );
 };

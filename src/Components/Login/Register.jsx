@@ -56,14 +56,14 @@ const Register = () => {
           ref={firstName}
           required
           className="loginInput"
-          placeholder="first name"
+          placeholder="First name"
         />
         <input
           type="text"
           ref={surname}
           required
           className="loginInput"
-          placeholder="surname"
+          placeholder="Surname"
         />
         <div className="registerInput">
           <input
@@ -71,14 +71,14 @@ const Register = () => {
             ref={email}
             required
             className="loginInput"
-            placeholder="email"
+            placeholder="Email"
           />
           <input
             type="email"
             ref={confirmEmail}
             required
             className="loginInput"
-            placeholder="confirm email"
+            placeholder="Confirm email"
           />
           <div className="registerInput">
             <input
@@ -86,7 +86,7 @@ const Register = () => {
               ref={password}
               required
               className="loginPassword"
-              placeholder="password"
+              placeholder="Password"
             />
           </div>
           <input
@@ -94,7 +94,7 @@ const Register = () => {
             ref={confirmPassword}
             required
             className="loginPassword"
-            placeholder="confirm password"
+            placeholder="Confirm password"
           />
         </div>
         <input

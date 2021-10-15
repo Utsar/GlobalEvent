@@ -5,36 +5,9 @@ import { Form, Row, Button, Col } from "react-bootstrap";
 import { withRouter } from "react-router";
 import LandingIntro from "./LandingIntro";
 
-// const { REACT_APP_BACKEND_URL } = process.env;
-
-export const LandingEventForm = ({ handleChange, handleNext }) => {
+export const LandingEventForm = ({ values, handleChange, handleNext }) => {
   console.log(handleChange);
 
-  // const saveInitialEvent = async (e) => {
-  //   e.preventDefault();
-  //   const url = `${REACT_APP_BACKEND_URL}/initialevents`;
-  //   try {
-  //     let response = await fetch(url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(initialEvent),
-  //     });
-  //     if (response.status === 200) {
-  //       console.log(response.status);
-  //       setinitialEvent({
-  //         ...initialEvent,
-  //         eventType: "",
-  //         location: "",
-  //         attendees: 1,
-  //         datetime: "",
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   return (
     <>
       <LandingIntro />
@@ -110,8 +83,8 @@ export const LandingEventForm = ({ handleChange, handleNext }) => {
 
           <Col
             xs={12}
-            md={2}
-            lg={2}
+            md={3}
+            lg={3}
             style={{
               paddingRight: "5px",
               paddingLeft: "5px",

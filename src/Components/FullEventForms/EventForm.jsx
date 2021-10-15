@@ -57,7 +57,11 @@ export const EventForm = () => {
   return (
     <>
       {activeStep === 0 && (
-        <LandingEventForm handleChange={handleChange} handleNext={handleNext} />
+        <LandingEventForm
+          handleChange={handleChange}
+          handleNext={handleNext}
+          values={initialEvent}
+        />
       )}
       {activeStep === 1 && (
         <Venue

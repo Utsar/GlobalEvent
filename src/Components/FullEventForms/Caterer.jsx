@@ -29,6 +29,7 @@ export const Caterer = ({
               id="catererType"
               onChange={(e) => handleChange(e)}
             >
+              <option>Choose Cuisine</option>
               <option>British</option>
               <option>Mediderranian</option>
               <option>Indian</option>

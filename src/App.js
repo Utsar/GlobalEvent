@@ -11,7 +11,7 @@ import { LandingBackgroundVideo } from "./Components/LandingPage/LandingBackgrou
 import { LandingNavBar } from "./Components/LandingPage/LandingNavBar";
 import { LandingFooter } from "./Components/LandingPage/LandingFooter";
 import { ClientProfilePage } from "./Components/ClientProfilePage/ClientProfilePage";
-import { Venue } from "./Components/FullEventForms/Venue";
+
 import { Login } from "./Components/Login/Login";
 import EventForm from "./Components/FullEventForms/EventForm";
 import Register from "./Components/Login/Register";
