@@ -2,21 +2,10 @@ import React, { useContext, useEffect } from "react";
 import "./ClientProfilePage.css";
 import "../FullEventForms/FullEventFormsStyle.css";
 
-import {
-  Container,
-  Row,
-  Navbar,
-  Nav,
-  Card,
-  Col,
-  ListGroup,
-  ListGroupItem,
-  CardGroup,
-} from "react-bootstrap";
-import { BsList } from "react-icons/bs";
+import { Container, Row, Navbar, Nav, Col } from "react-bootstrap";
+import dateFormat from "dateformat";
 import { Avatar, Button } from "@mui/material";
 import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
-import LandingFooter from "../LandingPage/LandingFooter";
 
 import ProfileBackground from "../../Assets/clientprofilebackground.jpg";
 import logoWhite from "../../Assets/logoWhite.png";
@@ -25,31 +14,31 @@ import { AuthContext } from "../../Context/AuthContext";
 import { backend } from "../../BackendConnection";
 
 export const ClientProfilePage = () => {
-  // Date.prototype.toShortFormat = function () {
-  //   let monthNames = [
-  //     "Jan",
-  //     "Feb",
-  //     "Mar",
-  //     "Apr",
-  //     "May",
-  //     "Jun",
-  //     "Jul",
-  //     "Aug",
-  //     "Sep",
-  //     "Oct",
-  //     "Nov",
-  //     "Dec",
-  //   ];
+  Date.prototype.toShortFormat = function () {
+    let monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
 
-  //   let day = this.getDate();
+    let day = this.getDate();
 
-  //   let monthIndex = this.getMonth();
-  //   let monthName = monthNames[monthIndex];
+    let monthIndex = this.getMonth();
+    let monthName = monthNames[monthIndex];
 
-  //   let year = this.getFullYear();
+    let year = this.getFullYear();
 
-  //   return `${day}-${monthName}-${year}`;
-  // };
+    return `${day}-${monthName}-${year}`;
+  };
 
   const { client, dispatch } = useContext(AuthContext);
 
@@ -65,6 +54,8 @@ export const ClientProfilePage = () => {
   }, []);
   console.log("this is client log", client);
 
+  // let anyDate = new Date(client?.createdAt).toShortFormat();
+  // console.log("this is anyDate", anyDate);
   return (
     <>
       <Container fluid className="clientProfilePageContainer">
@@ -129,12 +120,14 @@ export const ClientProfilePage = () => {
             </div>
             <div className="clientProfileInfo">
               <p>
-                <span>{client?.events.length}</span> active events
+                Active events: <span>{client?.events.length}</span>
               </p>
 
-              <p>4 completed events</p>
+              <p>Completed events: 0</p>
 
-              <p>member since: {client?.createdAt}</p>
+              <p>
+                member since: {new Date(client?.createdAt).toShortFormat()}{" "}
+              </p>
             </div>
           </Col>
         </Row>
@@ -145,13 +138,9 @@ export const ClientProfilePage = () => {
                 <div className="EventFormContainer">
                   <div className="eventsDescription">
                     <div>
-                      {/* <span>Name:</span> */}
                       <span>{event.eventType}</span>in
-                      {/* <span>Location:</span> */}
                       <span>{event.location}</span>for
-                      {/* <span>No. :</span> */}
                       <span>{event.attendees}</span>people
-                      {/* <span>Date:</span> */}
                       <span>{event.datetime}</span>
                     </div>
                   </div>

@@ -29,13 +29,15 @@
   flex-direction: column;
 }
 .supplierProfileAvatar {
-  padding: 5px;
+  padding: 15px;
 }
 .supplierProfileNavItems {
   list-style: none;
 }
 .supplierProfileNavItems > ul {
   text-decoration: none;
+  margin-top: 20px;
+  font-size: 18px;
   list-style: none;
   cursor: pointer;
   color: lightgray;
@@ -49,14 +51,24 @@
 }
 .supplierProfileHero1 {
   display: flex;
-  justify-content: space-between;
+  margin-left: 30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+.parallax > p {
+  color: white;
+}
+.parallax > h2 {
+  font-weight: 700;
 }
 .supplierProfileHero2 {
   display: flex;
   justify-content: space-between;
+  color: white;
 }
 .supplierProfileHeroRating {
-  align-items: baseline;
+  align-items: center;
 }
 
 .clientProfileInfo {
@@ -67,6 +79,7 @@
 }
 .clientProfileInfo > ul {
   text-decoration: none;
+  color: white;
   margin-right: 30px;
   font-weight: 300;
   font-size: 1.1em;

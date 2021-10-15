@@ -6,6 +6,12 @@ import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
 import logoWhite from "../../Assets/logoWhite.png";
 import supplierHero from "../../Assets/supplierhero.jpg";
 import { Avatar, Button } from "@mui/material";
+import { ParallaxProvider } from "react-scroll-parallax";
+import ParallaxImg from "./ParallaxImg";
+import beachCeremony from "../../Assets/beachCeremony.jpg";
+import food from "../../Assets/food.jpg";
+import tableSetup from "../../Assets/tableSetup.jpg";
+import drinks from "../../Assets/drinks.jpg";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
@@ -91,54 +97,122 @@ export const SupplierProfilePage = () => {
               </li>
             </div>
           </Col>
-          <Col xs={12} md={10}>
+          <Col xs={12} md={8}>
             <div className="supplierProfileHero1">
               <h2>Kristian Utsar`s company</h2>
-              <Button
-                variant="contained"
-                color="success"
-                style={{ marginTop: 5, marginRight: 50 }}
-              >
-                Set up
-              </Button>
             </div>
-            <div className="supplierProfileHero2">
-              <Box
-                sx={{
-                  width: 200,
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <Rating
-                  className="supplierProfileHeroRating"
-                  name="hover-feedback"
-                  value={value}
-                  precision={0.5}
-                  onChange={(event, newValue) => {
-                    setValue(newValue);
-                  }}
-                  onChangeActive={(event, newHover) => {
-                    setHover(newHover);
-                  }}
-                  emptyIcon={
-                    <StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />
-                  }
-                />
-                <span>total reviews</span>
-              </Box>
-              <li className="clientProfileInfo">
-                <ul>services done</ul>
-                <ul>acive bookings</ul>
-                <ul>Profile views</ul>
-                <ul>member since</ul>
-              </li>
+            <div className="parallax">
+              <ParallaxProvider>
+                <ParallaxImg
+                  imgsrc={beachCeremony}
+                  height="400px"
+                  opacity=".2"
+                ></ParallaxImg>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
+                </p>
+                <ParallaxImg
+                  imgsrc={food}
+                  height="400px"
+                  opacity=".5"
+                ></ParallaxImg>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
+                </p>
+                <ParallaxImg
+                  imgsrc={tableSetup}
+                  height="400px"
+                  opacity=".5"
+                ></ParallaxImg>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
+                </p>
+                <ParallaxImg
+                  imgsrc={drinks}
+                  height="400px"
+                  opacity=".5"
+                ></ParallaxImg>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s, when an unknown
+                  printer took a galley of type and scrambled it to make a type
+                  specimen book. It has survived not only five centuries, but
+                  also the leap into electronic typesetting, remaining
+                  essentially unchanged. It was popularised in the 1960s with
+                  the release of Letraset sheets containing Lorem Ipsum
+                  passages, and more recently with desktop publishing software
+                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever since the 1500s, when an unknown printer took a
+                  galley of type and scrambled it to make a type specimen book.
+                  It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged.
+                  It was popularised in the 1960s with the release of Letraset
+                  sheets containing Lorem Ipsum passages, and more recently with
+                  desktop publishing software like Aldus PageMaker including
+                  versions of Lorem Ipsum.
+                </p>
+              </ParallaxProvider>
             </div>
-            <div className="supplierProfileHero3">
-              <LoremIpsum p={1} />
-            </div>
-            <div className="supplierProfileHero#"></div>
-            <div className="supplierProfileHero#"></div>
           </Col>
         </Row>
       </Container>
