@@ -11,7 +11,7 @@ import ParallaxImg from "./ParallaxImg";
 import beachCeremony from "../../Assets/beachCeremony.jpg";
 import food from "../../Assets/food.jpg";
 import tableSetup from "../../Assets/tableSetup.jpg";
-import drinks from "../../Assets/drinks.jpg";
+import drinks2 from "../../Assets/drinks2.jpg";
 import Rating from "@mui/material/Rating";
 import Box from "@mui/material/Box";
 import StarIcon from "@mui/icons-material/Star";
@@ -185,7 +185,7 @@ export const SupplierProfilePage = () => {
                   versions of Lorem Ipsum.
                 </p>
                 <ParallaxImg
-                  imgsrc={drinks}
+                  imgsrc={drinks2}
                   height="400px"
                   opacity=".5"
                 ></ParallaxImg>

@@ -21,7 +21,7 @@ export const Entertainment = ({
         <Form className="my-1" style={{ color: "white" }}>
           <Form.Group className="my-1">
             <Form.Label>
-              <h4>Which Entertainemnt do you need?</h4>
+              <h4>Which Entertainment do you need?</h4>
             </Form.Label>
             <Form.Select
               type="text"

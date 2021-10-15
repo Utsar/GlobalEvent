@@ -113,3 +113,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+.allEvents {
+  display: flex;
+  justify-content: center;
+}

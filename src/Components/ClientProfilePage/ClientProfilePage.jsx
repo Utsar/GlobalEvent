@@ -131,7 +131,7 @@ export const ClientProfilePage = () => {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row className="allEvents">
           {client?.events.length > 0 ? (
             client.events.map((event) => (
               <Col key={event._id} xs={12} md={5}>

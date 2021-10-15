@@ -25,10 +25,9 @@ export const Login = () => {
 
       resetBackend();
 
-      await backend.post(
-        "/events",
-        JSON.parse(localStorage.getItem("newEvent"))
-      );
+      await backend
+        .post("/events", JSON.parse(localStorage.getItem("newEvent")))
+        .then(localStorage.removeItem("newEvent"));
       history.push("/client");
     } catch (error) {}
   };
