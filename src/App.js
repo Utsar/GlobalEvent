@@ -17,6 +17,7 @@ import EventForm from "./Components/FullEventForms/EventForm";
 import Register from "./Components/Login/Register";
 import { useContext } from "react";
 import { AuthContext } from "./Context/AuthContext";
+import { Auctions } from "./Components/Auctions/Auctions";
 
 export const App = () => {
   const { client } = useContext(AuthContext);
@@ -47,6 +48,9 @@ export const App = () => {
 
           <Route exact path="/register">
             {client ? <Redirect to="/client" /> : <Register />}
+          </Route>
+          <Route exact path="/auctions">
+            <Auctions />
           </Route>
         </Switch>
       </>
