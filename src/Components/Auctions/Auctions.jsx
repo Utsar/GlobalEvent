@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Auctions.css";
-import {
-  Button,
-  Col,
-  Container,
-  Nav,
-  Navbar,
-  NavDropdown,
-  Row,
-} from "react-bootstrap";
+import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import "../LandingPage/LandingPage.css";
 import logoWhite from "../../Assets/logoWhite.png";
 import { withRouter } from "react-router";
@@ -25,13 +17,14 @@ export const Auctions = () => {
     fetchData();
   }, []);
 
-  const [showAuction, setShowAuction] = useState(false);
+  const [showAuction, setShowAuction] = useState({});
 
   const handleClick = (value) => () => {
     setShowAuction(value);
 
     console.log(value.auction.eventType);
   };
+  console.log("thi sis showAuction", showAuction);
 
   return (
     <>
@@ -60,33 +53,54 @@ export const Auctions = () => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Container className="Auctions">
+      <Container className="headline">
         <Row>
           <h1>Auctions</h1>
         </Row>
         <Row>
+          <h1>Info</h1>
+        </Row>
+      </Container>
+      <Container className="auctionsContainer">
+        <Row className="auctions">
           {auctions?.length > 0 ? (
             auctions.map((auction, index) => (
-              <Col xs={12} key={auction._id}>
+              <Col xs={12} key={auction._id} style={{ padding: "5px" }}>
                 <div className="auctionsList">
                   <div>
-                    <span>Name: {auction?.eventType}</span>
-                    <span>Location: {auction?.location}</span>
-                    <span>Pax: {auction?.attendees}</span>
-                    <span>Date: {auction?.datetime}</span>
-                    <Button
-                      variant="primary"
-                      onClick={handleClick({ auction })}
-                    >
-                      View
-                    </Button>
+                    <div style={{ minWidth: "50px" }}>
+                      Name: {auction?.eventType}
+                    </div>
+                    <div>Location: {auction?.location}</div>
+                    <div>Pax: {auction?.attendees}</div>
+                    <div>Date: {auction?.datetime}</div>
                   </div>
+
+                  <Button
+                    style={{ padding: "30px" }}
+                    variant="primary"
+                    onClick={handleClick({ auction })}
+                  >
+                    View
+                  </Button>
+                  <Button variant="success" onClick={handleClick({ auction })}>
+                    Make a Bid
+                  </Button>
                 </div>
               </Col>
             ))
           ) : (
             <h1>No auctions</h1>
           )}
+        </Row>
+        <Row className="auctionInfo">
+          <div>
+            <div>{showAuction?.auction?.eventType}</div>
+            <div>{showAuction?.auction?.eventType}</div>
+            <div>{showAuction?.auction?.eventType}</div>
+            <div>{showAuction?.auction?.eventType}</div>
+            <div>{showAuction?.auction?.eventType}</div>
+          </div>
         </Row>
       </Container>
     </>

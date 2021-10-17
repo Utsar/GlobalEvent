@@ -1,4 +1,25 @@
-.auctionsList > div > span {
+.auctionsList > div {
   padding: 10px;
-  color: white;
+  color: wheat;
+  font-size: 20px;
+}
+.auctionsList {
+  max-width: 600px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.auctions {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 500px;
+}
+
+.auctionsContainer {
+  display: flex;
+}
+.auctionInfo {
+  margin-left: 50px;
 }
