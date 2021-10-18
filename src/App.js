@@ -49,9 +49,7 @@ export const App = () => {
           <Route exact path="/register">
             {client ? <Redirect to="/client" /> : <Register />}
           </Route>
-          <Route exact path="/auctions">
-            <Auctions />
-          </Route>
+          <Route exact path="/auctions" component={Auctions} />
         </Switch>
       </>
     </Router>

@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./SupplierProfilePage.css";
+import { withRouter } from "react-router";
 
 const ClientProfileForSupplier = () => {
   return (
@@ -25,8 +25,8 @@ const ClientProfileForSupplier = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ms-auto SupplierProfileNavItems">
-                <Nav.Link href="#ClientLogIn">View auctions</Nav.Link>
+              <Nav className="ms-auto ">
+                <Nav.Link href="/auctions">View auctions</Nav.Link>
 
                 <NotificationsNone
                   sx={{ color: "white", mr: "10px", ml: "10px" }}
@@ -45,4 +45,4 @@ const ClientProfileForSupplier = () => {
   );
 };
 
-export default ClientProfileForSupplier;
+export default withRouter(ClientProfileForSupplier);

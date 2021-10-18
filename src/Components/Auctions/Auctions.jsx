@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Auctions.css";
+import "../FullEventForms/FullEventFormsStyle.css";
 import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import "../LandingPage/LandingPage.css";
 import logoWhite from "../../Assets/logoWhite.png";
 import { withRouter } from "react-router";
 import { backend } from "../../BackendConnection";
+import EventFormOverview from "../FullEventForms/EventFormOverview";
 
 export const Auctions = () => {
   const [auctions, setAuctions] = useState([]);
@@ -49,7 +51,7 @@ export const Auctions = () => {
           <Nav className="ms-auto" style={{ marginRight: "30px" }}>
             <Nav.Link href="/supplier">Home</Nav.Link>
 
-            <Nav.Link href="/supplier">Sign out</Nav.Link>
+            <Nav.Link href="/login">Sign out</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -94,13 +96,86 @@ export const Auctions = () => {
           )}
         </Row>
         <Row className="auctionInfo">
-          <div>
-            <div>{showAuction?.auction?.eventType}</div>
-            <div>{showAuction?.auction?.eventType}</div>
-            <div>{showAuction?.auction?.eventType}</div>
-            <div>{showAuction?.auction?.eventType}</div>
-            <div>{showAuction?.auction?.eventType}</div>
+          <div className="finalEventFormContainer auctionInfoContainer">
+            <div className="eventSummary">
+              <h2>Event Summary</h2>
+            </div>
+            <br />
+            <div className="eventDescription">
+              <div>
+                {/* <span>Name:</span> */}
+                <span>{showAuction?.auction?.eventType}</span>in
+                {/* <span>Location:</span> */}
+                <span>{showAuction?.auction?.location}</span>for
+                {/* <span>No. :</span> */}
+                <span>{showAuction?.auction?.attendees}</span>people
+                {/* <span>Date:</span> */}
+                <span>{showAuction?.auction?.datetime}</span>
+              </div>
+            </div>
+
+            <div className="eventCategories">
+              {/* <h4 className="eventGategory">Gategory 1</h4> */}
+              <h5>
+                Venue : <span>{showAuction?.auction?.venueType}</span>
+              </h5>
+              <h5>
+                Description:{" "}
+                <span>{showAuction?.auction?.venueDescription}</span>
+              </h5>
+              <h5 className="eventBudget">
+                Budget: <span>£{showAuction?.auction?.venueBudget}</span>
+              </h5>
+
+              <br />
+              {/* <h4 className="eventGategory">Gategory 2</h4> */}
+              <h5>
+                Catering: <span>{showAuction?.auction?.catererType}</span>
+              </h5>
+              <h5>
+                Description:{" "}
+                <span>{showAuction?.auction?.catererDescription}</span>
+              </h5>
+              <h5 className="eventBudget">
+                Budget: <span>£{showAuction?.auction?.catererBudget}</span>
+              </h5>
+              <br />
+              {/* <h4 className="eventGategory">Gategory 3</h4> */}
+              <h5>
+                Entertainment:{" "}
+                <span>{showAuction?.auction?.entertainmentType} </span>
+              </h5>
+              <h5>
+                Description:{" "}
+                <span>{showAuction?.auction?.entertainmentDescription}</span>
+              </h5>
+              <h5 className="eventBudget">
+                Budget:{" "}
+                <span>£{showAuction?.auction?.entertainmentBudget}</span>
+              </h5>
+              <br />
+            </div>
+            {/* <input
+              type="button"
+              className="loginButton"
+              value="Submit"
+              onClick={handleSubmit}
+            /> */}
           </div>
+          {/* <div className="auctionInfoContainer">
+            <div>Gategory 1</div>
+            <div>{showAuction?.auction?.venueType}</div>
+            <div>{showAuction?.auction?.venueDescription}</div>
+            <div>{showAuction?.auction?.venueBudget}</div>
+            <div>Gategory 2</div>
+            <div>{showAuction?.auction?.catererType}</div>
+            <div>{showAuction?.auction?.catererDescription}</div>
+            <div>{showAuction?.auction?.catererBudget}</div>
+            <div>Gategory 3</div>
+            <div>{showAuction?.auction?.entertainmentType}</div>
+            <div>{showAuction?.auction?.entertainmentDescription}</div>
+            <div>{showAuction?.auction?.entertainmentBudget}</div>
+          </div> */}
         </Row>
       </Container>
     </>

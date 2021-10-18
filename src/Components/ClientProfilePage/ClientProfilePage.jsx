@@ -3,7 +3,7 @@ import "./ClientProfilePage.css";
 import "../FullEventForms/FullEventFormsStyle.css";
 
 import { Container, Row, Navbar, Nav, Col } from "react-bootstrap";
-import dateFormat from "dateformat";
+
 import { Avatar, Button } from "@mui/material";
 import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
 

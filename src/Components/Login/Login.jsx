@@ -63,7 +63,7 @@ export const Login = () => {
         <input
           type="button"
           className="loginButton"
-          href="/register"
+          onClick={() => history.push("/register")}
           value="Register"
         />
       </div>
