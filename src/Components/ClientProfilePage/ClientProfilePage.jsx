@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import "./ClientProfilePage.css";
-import "../FullEventForms/FullEventFormsStyle.css";
 
-import { Container, Row, Navbar, Nav, Col } from "react-bootstrap";
+import { Container, Row, Navbar, Nav, Col, Table } from "react-bootstrap";
 
 import { Avatar, Button } from "@mui/material";
 import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
@@ -135,7 +134,91 @@ export const ClientProfilePage = () => {
           {client?.events.length > 0 ? (
             client.events.map((event) => (
               <Col key={event._id} xs={12} md={5}>
-                <div className="EventFormContainer">
+                <Table striped bordered hover variant="dark">
+                  <thead className="eventsDescriptionContainer">
+                    <tr className="eventsDescriptionContainer">
+                      <td
+                        colSpan="5"
+                        className="eventsDescription"
+                        style={{ textAlign: "center" }}
+                      >
+                        <span>{event.eventType}</span>in
+                        <span>{event.location}</span>for
+                        <span>{event.attendees}</span>guests
+                        <span>{new Date(event.datetime).toShortFormat()}</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Gategory</th>
+                      <th>Type</th>
+                      <th>Description</th>
+                      <th>Budget</th>
+                      <th style={{ textAlign: "center" }}>
+                        <button
+                          type="button"
+                          className="button"
+                          value="Publish"
+                          onClick={event.handleSubmit}
+                        >
+                          Publish
+                        </button>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Venue</td>
+                      <td>{event.venueType}</td>
+                      <td>{event.venueDescription}</td>
+                      <td>{event.budget}</td>
+                      <td style={{ textAlign: "center" }}>
+                        <button
+                          type="button"
+                          className="button"
+                          value="Publish"
+                          onClick={event.handleSubmit}
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Catering</td>
+                      <td>{event.catererType}</td>
+                      <td>{event.catererDescription}</td>
+                      <td>{event.catererBudget}</td>
+                      <td style={{ textAlign: "center" }}>
+                        <button
+                          type="button"
+                          className="button"
+                          value="Publish"
+                          onClick={event.handleSubmit}
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Entertainment</td>
+
+                      <td>{event.entertainmentType}</td>
+                      <td>{event.entertainmentDescription}</td>
+                      <td>{event.entertainmentBudget}</td>
+                      <td style={{ textAlign: "center" }}>
+                        <button
+                          type="button"
+                          className="button"
+                          value="Publish"
+                          onClick={event.handleSubmit}
+                        >
+                          Edit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </Table>
+
+                {/* <div className="EventFormContainer">
                   <div className="eventsDescription">
                     <div>
                       <span>{event.eventType}</span>in
@@ -146,7 +229,7 @@ export const ClientProfilePage = () => {
                   </div>
                   <br />
                   <div className="eventsCategories">
-                    {/* <h4 className="eventGategory">Gategory 1</h4> */}
+                    
                     <h5>
                       Venue : <span>{event.venueType}</span>
                     </h5>
@@ -158,7 +241,7 @@ export const ClientProfilePage = () => {
                     </h5>
 
                     <br />
-                    {/* <h4 className="eventGategory">Gategory 2</h4> */}
+               
                     <h5>
                       Catering: <span>{event.catererType}</span>
                     </h5>
@@ -169,7 +252,7 @@ export const ClientProfilePage = () => {
                       Budget: <span>£{event.catererBudget}</span>
                     </h5>
                     <br />
-                    {/* <h4 className="eventGategory">Gategory 3</h4> */}
+                  
                     <h5>
                       Entertainment: <span>{event.entertainmentType} </span>
                     </h5>
@@ -193,7 +276,7 @@ export const ClientProfilePage = () => {
                     value="Edit"
                     onClick={event.handleSubmit}
                   />
-                </div>
+                </div> */}
               </Col>
             ))
           ) : (
