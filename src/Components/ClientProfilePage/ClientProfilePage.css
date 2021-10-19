@@ -16,7 +16,7 @@ body {
 .clientProfileAvatar {
   display: flex;
   justify-content: center;
-
+  align-items: center;
   position: relative;
   top: -13%;
   max-height: 100px;
@@ -24,15 +24,17 @@ body {
 .clientProfileName {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: absolute;
-  top: 20%;
-  left: 42%;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
 }
-.clientProfileName > div > p {
+/* .clientProfileName > div > p {
   display: flex;
   justify-content: center;
-}
+} */
 .clientProfileNavItems {
   display: flex;
   align-items: center;
@@ -50,11 +52,14 @@ body {
 .clientProfileButtons {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .clientProfileInfo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  align-items: center;
   padding-top: 15px;
+  font-size: 22px;
 }
 .clientProfileInfo > p {
   color: lightgray;

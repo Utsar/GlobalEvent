@@ -6,6 +6,8 @@ import { Container, Row, Navbar, Nav, Col, Table } from "react-bootstrap";
 import { Avatar, Button } from "@mui/material";
 import { NotificationsNone, MessageOutlined } from "@mui/icons-material";
 
+import beachStill from "../../Assets/beachStill.jpg";
+
 import ProfileBackground from "../../Assets/clientprofilebackground.jpg";
 import logoWhite from "../../Assets/logoWhite.png";
 import { withRouter } from "react-router";
@@ -103,18 +105,21 @@ export const ClientProfilePage = () => {
               ></img>
             </div>
             <div className="clientProfileAvatar">
-              <Avatar sx={{ width: 150, height: 150 }} />
+              <Avatar sx={{ width: 150, height: 150 }} src={beachStill} />
             </div>
             <div className="clientProfileButtons">
+              <Button variant="contained" color="success">
+                Booked Events
+              </Button>
               <Button
                 variant="contained"
                 color="success"
-                style={{ marginRight: 25 }}
+                style={{ marginRight: 25, marginLeft: 25 }}
               >
-                My events
+                Active Events
               </Button>
               <Button variant="contained" color="success">
-                My bookings
+                Edit Profile
               </Button>
             </div>
             <div className="clientProfileInfo">

@@ -6,6 +6,7 @@ import { useHistory } from "react-router";
 import LandingBackgroundVideo from "../LandingPage/LandingBackgroundVideo";
 import LandingNavBar from "../LandingPage/LandingNavBar";
 import LandingFooter from "../LandingPage/LandingFooter";
+import BackgroundStill from "./BackgroundStill";
 
 const Register = () => {
   const firstName = useRef();
@@ -48,6 +49,7 @@ const Register = () => {
   return (
     <>
       <LandingBackgroundVideo />
+      {/* <BackgroundStill /> */}
       <LandingNavBar />
       <div className="frostedForm"></div>
       <form className="registerForm">

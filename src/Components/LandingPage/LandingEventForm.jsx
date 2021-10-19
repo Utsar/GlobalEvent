@@ -70,7 +70,7 @@ export const LandingEventForm = ({ values, handleChange, handleNext }) => {
               id="attendees"
               onChange={(e) => handleChange(e)}
             >
-              <option>No.people</option>
+              <option>Guests</option>
               <option>0-10</option>
               <option>11-25</option>
               <option>26-50</option>
