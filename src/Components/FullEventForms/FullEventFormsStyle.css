@@ -26,7 +26,7 @@
   padding: 0;
   margin: 0;
   top: 17%;
-  left: 30%;
+  left: 27%;
   right: 25%;
 }
 
@@ -81,7 +81,7 @@
 .formDiv {
   position: absolute;
   height: 630px;
-  width: 630px;
+  width: 620px;
   border-radius: 8px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(10px);
@@ -90,7 +90,7 @@
   border-left: 2px solid rgba(225, 225, 225, 0.1);
   border-right: 1px solid rgba(225, 225, 225, 0.2); */
   top: 12%;
-  left: 29%;
+  left: 26%;
   right: 25%;
 }
 input[type="button"] {
