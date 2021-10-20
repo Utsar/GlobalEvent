@@ -1,7 +1,7 @@
 .frostedForm {
   position: absolute;
-  top: 25%;
-  left: 34%;
+  top: 20%;
+  left: 33%;
   right: 33%;
   z-index: 2;
   height: 525px;
@@ -20,7 +20,7 @@
 
 .registerForm {
   position: absolute;
-  top: 31%;
+  top: 28%;
   left: 40%;
   height: 200px;
   width: 200px;

@@ -8,13 +8,10 @@
   right: 35%;
 }
 .fullEventFormButtons {
-  /* align-items: center; */
-  position: absolute;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  /* left: 35%;
-  right: 35%; */
+  /* position: absolute; */
+
+  /* align-items: center; */
 }
 
 /* EventFormOverview */
@@ -28,7 +25,7 @@
   position: absolute;
   padding: 0;
   margin: 0;
-  top: 20%;
+  top: 17%;
   left: 30%;
   right: 25%;
 }
@@ -71,6 +68,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .eventBudget {
   color: white;
 }
@@ -82,8 +80,8 @@
 
 .formDiv {
   position: absolute;
-  height: 700px;
-  width: 700px;
+  height: 630px;
+  width: 630px;
   border-radius: 8px;
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(10px);
@@ -91,8 +89,8 @@
   /* border-top: 2px solid rgba(225, 225, 225, 0.3);
   border-left: 2px solid rgba(225, 225, 225, 0.1);
   border-right: 1px solid rgba(225, 225, 225, 0.2); */
-  top: 15%;
-  left: 27%;
+  top: 12%;
+  left: 29%;
   right: 25%;
 }
 input[type="button"] {

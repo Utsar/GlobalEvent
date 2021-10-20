@@ -69,17 +69,17 @@ export const Entertainment = ({
             </InputGroup>
           </Form.Group>
           <Row className="fullEventFormButtons">
-            <Col xs={12} md={4}>
+            <Col xs={12} md={3} style={{ marginLeft: "60px" }}>
               <Button variant="primary" onClick={handlePrevious}>
                 Back
               </Button>
             </Col>
 
-            <Col xs={12} md={4}>
+            <Col xs={12} md={3}>
               <Button variant="success">Ready</Button>
             </Col>
 
-            <Col xs={12} md={4}>
+            <Col xs={12} md={3}>
               <Button variant="primary" onClick={handleNext}>
                 Next
               </Button>
