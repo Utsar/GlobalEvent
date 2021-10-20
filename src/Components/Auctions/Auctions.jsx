@@ -130,7 +130,7 @@ export const Auctions = () => {
                         <td>Venue</td>
                         <td>{auction?.venueType}</td>
                         <td>{auction?.venueDescription}</td>
-                        <td>{auction?.budget}</td>
+                        <td>{auction?.venueBudget}</td>
                         <td style={{ textAlign: "center" }}>
                           <button
                             type="button"

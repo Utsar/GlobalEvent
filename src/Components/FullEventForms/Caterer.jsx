@@ -31,7 +31,7 @@ export const Caterer = ({
             >
               <option>Choose Cuisine</option>
               <option>British</option>
-              <option>Mediderranian</option>
+              <option>Mediterranean</option>
               <option>Indian</option>
               <option>Asian</option>
               <option>American</option>
