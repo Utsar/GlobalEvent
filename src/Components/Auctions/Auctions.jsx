@@ -179,11 +179,7 @@ export const Auctions = () => {
                   </Table>
                 </Col>
               ))
-              .sort(function (a, b) {
-                let dateA = a.index,
-                  dateB = b.index;
-                return dateA - dateB;
-              })
+              .reverse()
           ) : (
             <h1>No auctions</h1>
           )}
